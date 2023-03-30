@@ -14,10 +14,12 @@ const HeaderNav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/" className="nav-link" >
+          <Link to="/" className="nav-link" >
+            <i className="fas fa-house me-2"></i>
               Home
             </Link>
-            <Link to="/login" className="nav-link" >
+          <Link to="/login" className="nav-link" >
+            <i className="fas fa-user me-2"></i>
             Log {!user.username ? "In" : "Out"}
             </Link>
           </Nav>

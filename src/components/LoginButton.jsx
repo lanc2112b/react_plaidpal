@@ -10,6 +10,7 @@ const LoginButton = () => {
     return (
 
         <Button variant="danger" onClick={handleLogin}>
+            <i className="fas fa-user me-2"></i>
             Login w/google
         </Button>
 
