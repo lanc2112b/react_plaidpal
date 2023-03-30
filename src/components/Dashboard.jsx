@@ -34,7 +34,7 @@ const Dashboard = () => {
     const [publicToken, setPublicToken] = useState();
     useEffect(() => {
         async function fetch() {
-            const response = await axios.post('/api/create_link_token');
+            const response = await axios.post('/api/create_link_token', {});
             setLinkToken(response.data.link_token);
             console.log('response: ', response);
         }
