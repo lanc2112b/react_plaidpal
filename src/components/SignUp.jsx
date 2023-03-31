@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 
 const SignUp = () => {
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:5152/signup"
+      `https://plaidpal-api.onrender.com/api/signup`
   );
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const SignUp = () => {
       // google.accounts.id.prompt()
     }
   }, [handleGoogle]);
-
+console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
   return (
     <>
         {error && <p style={{ color: "red" }}>{error}</p>}

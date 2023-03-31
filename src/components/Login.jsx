@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 
 const Login = () => {
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:5152/login"
+    `https://plaidpal-api.onrender.com/api/login`
   );
 
   useEffect(() => {

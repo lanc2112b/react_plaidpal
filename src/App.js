@@ -20,10 +20,8 @@ function App() {
       <Header />
         <Routes>
         <Route path="/" element={<MainSection element={<Landing />} />} />
-        
-
-        <Route path="/signup" element={<MainSection element={<Signup />} />} />
-        <Route path="/login" element={<MainSection element={<Login />} />} />
+        <Route path="/signup" element={<MainSection element={!user.email ? <Signup/> : <Landing/>} />} />
+        <Route path="/login" element={<MainSection element={!user.email ? <Login/> : <Landing/>} />} />
         <Route path="/dashboard" element={<MainSection element={<Dashboard />} />} />
         
         </Routes>
