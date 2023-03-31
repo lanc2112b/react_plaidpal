@@ -4,9 +4,9 @@ import useFetch from "../hooks/useFetch";
 
 // https://developers.google.com/identity/gsi/web/reference/js-reference
 
-const Login = () => {
+const SignUp = () => {
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:5152/login"
+    "http://localhost:5152/signup"
   );
 
   useEffect(() => {
@@ -17,11 +17,11 @@ const Login = () => {
         callback: handleGoogle,
       });
 
-      google.accounts.id.renderButton(document.getElementById("loginDiv"), {
+      google.accounts.id.renderButton(document.getElementById("signUpDiv"), {
         // type: "standard",
         theme: "filled_black",
         // size: "small",
-        text: "signin_with",
+        text: "continue_with",
         shape: "pill",
       });
 
@@ -32,12 +32,13 @@ const Login = () => {
   return (
     <>
         {error && <p style={{ color: "red" }}>{error}</p>}
-      {loading ? <div>Loading....</div> : <div id="loginDiv"></div>}
-      
-      { } 
-
+        {loading ? (
+          <div>Loading....</div>
+        ) : (
+          <div id="signUpDiv" data-text="signup_with"></div>
+        )}
     </>
   );
 };
 
-export default Login;
+export default SignUp;
