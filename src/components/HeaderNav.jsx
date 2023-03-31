@@ -30,6 +30,7 @@ const HeaderNav = () => {
     });
   };
   
+  console.log(user);
   return (<Navbar expand="lg">
       <Container>
         <Navbar.Brand href="#home"><img src="PlaidPal.png" alt="plaid pal logo"/></Navbar.Brand>
@@ -41,16 +42,17 @@ const HeaderNav = () => {
               Home
           </Link>
           
-          {user.email !== null ?
+          {!user.email ?
+            <Link to="/login" className="nav-link"  >
+            <i className="fas fa-user me-2"></i>
+            Log In
+        </Link>
+            :
             < Nav.Item className="nav-link" onClick={logout}>
               <i className="fas fa-user me-2"></i>
             Log Out
           </Nav.Item>
-            :
-          <Link to="/login" className="nav-link"  >
-            <i className="fas fa-user me-2"></i>
-            Log In
-        </Link>
+          
           }
           
         
