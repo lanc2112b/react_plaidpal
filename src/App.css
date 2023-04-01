@@ -63,6 +63,11 @@ footer li{
   height: auto;
 }
 
+.account-card {
+width: 79px !important;
+height: 50px !important;
+}
+
 .App {
   text-align: center;
 }
@@ -80,3 +85,16 @@ footer li{
   flex: 1 1 auto;
 }
  */
+
+.card-photo {
+  border-radius: 0.4rem;
+  position: relative;
+  margin-top: -30px;
+  width:fit-content;
+
+}
+
+.card-photo img { 
+  border-radius: 0.3rem;
+  
+}

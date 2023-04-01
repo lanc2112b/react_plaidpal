@@ -14,7 +14,7 @@ const Summary = () => {
 
 
             async function fetch() {
-                const response = await axios.post('/api/users', {googleId: user.googleId});
+                const response = await axios.post('/api/plaid/accounts ', {googleId: user.googleId});
                 console.log(response, "here");   
                 setList(response.data);
             }
@@ -26,7 +26,7 @@ const Summary = () => {
     return (
         <>
             {list.map((element) => {
-                return <p>{element.email}</p>   
+                return <p>{element.balances.available}</p>   
             })}
         </>
     )
