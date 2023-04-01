@@ -19,7 +19,7 @@ const Profile = () => {
         <section className="profile container">
             <Row className="gx-0 gx-md-4 mt-5">
                 <ProfileCard />
-                <ProfileAccounts token={user.token} />
+                <ProfileAccounts googleId={user.googleId} />
             </Row>
         </section>
     )

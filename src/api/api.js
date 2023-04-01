@@ -4,13 +4,13 @@ const ppApi = axios.create({
   baseURL: "https://be-plaidpal.onrender.com/api/",
 });
 
-const tempToken = '108971830262728991643'
+//const tempToken = '108971830262728991643'
 
 ///  app.post("/api/plaid/accounts", getPlaidAccounts);  // used in profile :)
 // Any filters on this endpoint? 
-export const getAccounts = (token) => {
+export const getAccounts = (googleId) => {
   return ppApi
-    .post(`/plaid/accounts`, { googleId: tempToken }) 
+    .post(`/plaid/accounts`, { googleId: googleId }) 
     .then((results) => {
       //console.log(results)
       return results.data;
@@ -19,8 +19,8 @@ export const getAccounts = (token) => {
 }
 
 //app.get("/api/users", getAllUsers); // do we need a get? Maybe for an admin panel?
-// This may want securing with a token in the headers
-export const getAllUsers = (token = null) => {
+// This may want securing with a googleId in the headers
+export const getAllUsers = (googleId = null) => {
   return ppApi
     .get(`/users`) 
     .then((results) => {
@@ -31,8 +31,8 @@ export const getAllUsers = (token = null) => {
 }
 
 // app.get("/api/users/:googleId", getUserById); // do we need a get? Maybe for an admin panel?
-export const getUserById = (id) => {
-  return ppApi.get(`/users/${id}`) 
+export const getUserById = (googleId) => {
+  return ppApi.get(`/users/${googleId}`) 
     .then((results) => {
       //console.log(results)
       return results.data;
@@ -44,9 +44,9 @@ export const getUserById = (id) => {
 // app.delete("/api/users/:googleId", deleteUserById); /// For the delete user button in profile : 
 
 /** THIS defintely needs protecting :)  */
-export const deleteUserById = (id) => {
+export const deleteUserById = (googleId) => {
   return ppApi
-    .delete(`/users/${id}`)
+    .delete(`/users/${googleId}`)
     .then((results) => {
       //console.log(results)
       // return the status code here

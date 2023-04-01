@@ -4,20 +4,20 @@ import ProfileAccountCard from "./ProfileAccountCard";
 import LoaderSmall from './LoaderSmall';
 import { getAccounts } from "../api/api";
 
-const ProfileAccounts = ({token}) => {
+const ProfileAccounts = ({ googleId }) => {
     /** Accounts list here */
     const [accountList, setAccountList] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
-        getAccounts(token)
+        getAccounts(googleId)
             .then((results) => {
                 setAccountList(results);
             });
         setLoading(false);
 
-    }, [token]);
+    }, [googleId]);
 
     if(loading) return (<LoaderSmall content={"Loading Accounts..."} />);
     //console.log(accountList)
