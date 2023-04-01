@@ -18,7 +18,7 @@ const HeaderNav = () => {
 
   const logout = () => {
     localStorage.removeItem("user");
-    window.location.reload();
+    
     setUser({
       user: {
         firstName: null,
@@ -28,6 +28,7 @@ const HeaderNav = () => {
         token: null,
       },
     });
+    window.location.reload();
   };
   
 
