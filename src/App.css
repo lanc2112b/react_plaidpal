@@ -1,5 +1,5 @@
 :root {
-  --clight: #EEECED;
+  --clight: hsl(0, 0.5%, 99.83%);
   --slate: #7D93A0;
   --gold: #BF8828;
   --ngrey: #7D8696;
@@ -13,10 +13,11 @@
 
 #root {
   min-height: 100dvh;
+  background: var(--clight);
 }
 
 main {
-  /* background: var(--clight); */
+   background: var(--clight); 
 }
 
 header {
@@ -33,9 +34,17 @@ header {
 
 footer {
   min-height: 5rem;
-  background: var(--ocean-blue);
-  color: #fff;
+  background: var(--clight);
+  color: var(--ocean-blue);
 }
+
+footer i {
+  font-size: 2rem;
+}
+footer li{
+  line-height: 2.2rem;
+}
+
 .full-height {
   min-height: 100%;
 }

@@ -1,43 +1,36 @@
-import React, { useEffect } from "react";
-//import { Link } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
-
-// https://developers.google.com/identity/gsi/web/reference/js-reference
+import LoginButton from './LoginButton';
+import FlashMessage from "./FlashMessage";
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Login = () => {
-  const { handleGoogle, loading, error } = useFetch(
-    `https://plaidpal-api.onrender.com/api/login`
-  );
 
-  useEffect(() => {
-    /* global google */
-    if (window.google) {
-      google.accounts.id.initialize({
-        client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-        callback: handleGoogle,
-      });
+    return (
 
-      google.accounts.id.renderButton(document.getElementById("loginDiv"), {
-        // type: "standard",
-        theme: "filled_black",
-        // size: "small",
-        text: "signin_with",
-        shape: "pill",
-      });
+        <section className="Login">
+            <Container className="mt-sm-3 mt-lg-5 ">
+                <Row>
+                    <Col></Col>
+                    <Col xs={12} md={10} lg={8} className="p-5 shadow-sm d-flex flex-column justify-content-center align-items-center  bg-white">
 
-      // google.accounts.id.prompt()
-    }
-  }, [handleGoogle]);
+                        <h1>Login</h1>
+                        <p>Welcome back: var from user storage</p>
+                        <p>
+                            <span>Some login text here if needed
+                            </span>
+                        </p>
+                        <FlashMessage />
+                        <LoginButton />
+                    </Col>
+                    <Col></Col>
+                </Row>
+            </Container>
 
-  return (
-    <>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-      {loading ? <div>Loading....</div> : <div id="loginDiv"></div>}
-      
-      { } 
 
-    </>
-  );
-};
+
+        </section>
+
+    )
+
+}
 
 export default Login;

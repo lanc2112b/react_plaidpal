@@ -8,6 +8,7 @@ export const MessageProvider = ({ children }) => {
     showMsg: null,
     title: null,
     msg: null,
+    dismiss: null,
   };
 
   const [message, setMessage] = useState(initial);

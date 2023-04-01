@@ -1,23 +1,50 @@
-import { Button } from 'react-bootstrap';
+import { useEffect } from 'react';
+import useFetch from "../hooks/useFetch";
+import { Spinner } from "react-bootstrap";
 
-const LoginButton = () => { 
+// https://developers.google.com/identity/gsi/web/reference/js-reference
 
- const handleLogin = () => {
-     const backendURL = `https://plaidpal-api.onrender.com`;
-     window.location.href = `${backendURL}/auth/google`;
-     //window.location.href = `${backendURL}/api/users`;
-  };
+const LoginButton = () => {
 
-    return (
+  const { handleGoogle, loading} = useFetch(
+    `https://plaidpal-api.onrender.com/api/login`
+  );
+
+  useEffect(() => {
+
+    if (window.google) {
+      window.google.accounts.id.initialize({
+        client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+        callback: handleGoogle,
+      });
+
+      window.google.accounts.id.renderButton(document.getElementById("loginDiv"), {
+         type: "standard",
+        //theme: "filled_black",
+        // size: "small",
+        text: "signin_with",
+        shape: "pill",
+      });
+
+      // google.accounts.id.prompt()
+    }
+  }, [handleGoogle]);
+
+  return (
+    <>
+      {loading ?
         <>
-        <Button variant="danger" onClick={handleLogin}>
-            <i className="fas fa-user me-2"></i>
-            Login w/google
-        </Button>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Logging in...</span>
+          </Spinner>
+          <span>Logging in...</span>
         </>
+        : <div id="loginDiv"></div>}
+      
+      { } 
 
-    )
-}
+    </>
+  );
+};
 
 export default LoginButton;
-
