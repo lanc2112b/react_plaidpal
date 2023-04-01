@@ -35,7 +35,7 @@ const HeaderNav = () => {
 
   return (<Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><img src="PlaidPal.png" alt="plaid pal logo"/></Navbar.Brand>
+      <Link to="/" className="navbar-brand" ><img src="PlaidPal.png" alt="plaid pal logo"/></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -62,6 +62,29 @@ const HeaderNav = () => {
             Register
           </Link> : ""}
           
+          {user.email && user.googleId ? 
+            <>
+              <Link to="/profile" className="nav-link nav-profile-link d-flex">
+                <img src={user.picture} alt="profile avatar" className="me-1"/>
+                Profile
+              </Link>
+            <Link to="/dashboard" className="nav-link"  >
+                <i className="fa-solid fa-wallet me-2"></i>
+              Dashboard
+            </Link>
+            <Link to="/summary" className="nav-link"  >
+                <i className="fa-solid fa-chart-column me-2"></i>
+            Summary
+            </Link>
+            </>
+            :
+
+            <>
+            </>
+             
+             }
+
+
           </Nav>
         </Navbar.Collapse>
       </Container>

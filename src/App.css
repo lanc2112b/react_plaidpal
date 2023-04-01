@@ -32,6 +32,15 @@ header {
   height: auto;
 } 
 
+/* nav-profile-link {
+  
+} */
+.nav-profile-link img{
+  width: 1.3rem;
+  height: auto;
+  border-radius: 50%;
+}
+
 footer {
   min-height: 5rem;
   background: var(--clight);
