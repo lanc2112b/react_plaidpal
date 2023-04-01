@@ -20,7 +20,7 @@ const ProfileAccounts = ({token}) => {
     }, [token]);
 
     if(loading) return (<LoaderSmall content={"Loading Accounts..."} />);
-
+    //console.log(accountList)
     return (
 
         <Col xs={12} lg={6} className="profile-accounts rounded pt-0 pt-2 mt-4 mt-lg-0 border-top border-light shadow-sm">
