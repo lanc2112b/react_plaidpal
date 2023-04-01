@@ -50,7 +50,7 @@ const HeaderNav = () => {
             Log In
         </Link>
             :
-            < Nav.Item className="nav-link" onClick={logout}>
+            < Nav.Item className="nav-link" role="button" onClick={logout}>
               <i className="fas fa-user me-2"></i>
             Log Out
           </Nav.Item>
