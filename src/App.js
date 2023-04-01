@@ -10,11 +10,14 @@ import Login from './components/Login';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
 import Signup from './components/SignUp';
+import Summary from './components/Summary';
+import ReactCharts2Examples from './components/ReactChart2Examples';
+//import Dashboard from './components/Dashboard';
 
 function App() {
 
   const { user } = useContext(UserContext);
-
+  console.log(user);
   return (
     <>
       <Header />
@@ -23,7 +26,8 @@ function App() {
         <Route path="/signup" element={<MainSection element={!user.email ? <Signup/> : <Landing/>} />} />
         <Route path="/login" element={<MainSection element={!user.email ? <Login/> : <Landing/>} />} />
         <Route path="/dashboard" element={<MainSection element={<Dashboard />} />} />
-        
+        <Route path="/summary" element={<MainSection element={<Summary />} />} />
+        <Route path="/react2chart" element={<MainSection element={<ReactCharts2Examples />} />} />
         </Routes>
       <Footer />
     </>

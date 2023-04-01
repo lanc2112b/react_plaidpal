@@ -14,7 +14,7 @@ const HeaderNav = () => {
     if (theUser && !theUser.includes("undefined")) {
       setUser(JSON.parse(theUser));
     }
-  }, []);
+  }, [setUser]);
 
   const logout = () => {
     localStorage.removeItem("user");
@@ -30,6 +30,7 @@ const HeaderNav = () => {
     });
   };
   
+
   console.log(user);
   return (<Navbar expand="lg">
       <Container>

@@ -1,15 +1,20 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { UserContext } from '../contexts/User';
+import { useState, useEffect, useContext } from "react";
 import { usePlaidLink } from 'react-plaid-link';
 
+
 axios.defaults.baseURL = 'https://plaidpal-api.onrender.com';
-axios.defaults.withCredentials = true;
+//axios.defaults.withCredentials = true;
 function PlaidAuth({ publicToken }) {
     const [account, setAccount] = useState();
+    const { user } = useContext(UserContext); 
+    
     useEffect(() => {
         async function fetchData() {
             let accessToken = await axios.post('/api/exchange_public_token', {
-                public_token: publicToken,
+                token: publicToken,
+                googleId: user.googleId,
             });
             console.log('accessToken: ', accessToken.data);
             const auth = await axios.post('/api/auth', {
@@ -19,7 +24,7 @@ function PlaidAuth({ publicToken }) {
             console.log('auth data: ', auth.data);
         }
         fetchData();
-    }, [publicToken]);
+    }, [publicToken, user.googleId]);
     return (
         account && (
             <>
@@ -32,6 +37,7 @@ function PlaidAuth({ publicToken }) {
 const Dashboard = () => {
     const [linkToken, setLinkToken] = useState();
     const [publicToken, setPublicToken] = useState();
+    //const { user, setUser } = useContext(UserContext);
     useEffect(() => {
         async function fetch() {
             const response = await axios.post('/api/create_link_token', {});
@@ -44,6 +50,7 @@ const Dashboard = () => {
         token: linkToken,
         onSuccess: (public_token, metadata) => {
             setPublicToken(public_token);
+           
             console.log('success ', public_token, metadata);
             // send public_token to server
         },

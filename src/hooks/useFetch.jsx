@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Navigate } from "react-router-dom";
+
 // Pass URL
 const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
@@ -21,11 +23,15 @@ const useFetch = (url) => {
         return res.json();
       })
       .then((data) => {
-        if (data?.user) {
-          localStorage.setItem("user", JSON.stringify(data?.user));
-          window.location.reload();
-        }
-
+        //if (data.user.accounts) {
+          if (data?.user) {
+            localStorage.setItem("user", JSON.stringify(data?.user));
+            //window.location.reload();
+            window.location.replace('/')
+          }
+        ////} else {
+          //console.log('something')
+        //}
         throw new Error(data?.message || data);
       })
       .catch((error) => {
