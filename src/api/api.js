@@ -73,7 +73,7 @@ export const addNewUser = (data) => { // data object,
 // app.post("/api/create_link_token", createLinkToken);   // user <-> plaid setup
 export const createLinkToken = (data) => { // data object, 
   return ppApi
-    .post('/create_link_token')
+    .post('/create_link_token', {})
     .then((results) => {
       //console.log(results)
       return results.data; // returned token object 
@@ -84,13 +84,24 @@ export const createLinkToken = (data) => { // data object,
 // app.post("/api/exchange_public_token", tokenExchange); // user <-> plaid setup
 export const tokenExchange = (data) => { // data object, 
   return ppApi
-    .post('/exchange_public_token')
+    .post('/exchange_public_token', { data })
     .then((results) => {
       //console.log(results)
       return results.data; // returned token object 
     });
 
 }
+
+export const authUser = (data) => { // data object, 
+  return ppApi
+    .post('/auth', {data})
+    .then((results) => {
+      console.log(results)
+      return results.data; // returned token object 
+    });
+
+}
+
 
 // app.post("/api/plaid/transactions", getTransactions); /// for summary / dashboard page  
 //[daterange, income, expediture, asc/ desc, page, limit] or whatever the actual ones are... 
