@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
-import Signup from './components/SignUp';
+import RegisterPage from './components/RegisterPage';
 import Summary from './components/Summary';
 import ReactCharts2Examples from './components/ReactChart2Examples';
 //import Dashboard from './components/Dashboard';
@@ -17,13 +17,13 @@ import ReactCharts2Examples from './components/ReactChart2Examples';
 function App() {
 
   const { user } = useContext(UserContext);
-  console.log(user);
+ // console.log(user);
   return (
     <>
       <Header />
         <Routes>
         <Route path="/" element={<MainSection element={<Landing />} />} />
-        <Route path="/signup" element={<MainSection element={!user.email ? <Signup/> : <Landing/>} />} />
+        <Route path="/signup" element={<MainSection element={!user.email ? <RegisterPage /> : <Landing/>} />} />
         <Route path="/login" element={<MainSection element={!user.email ? <Login/> : <Landing/>} />} />
         <Route path="/dashboard" element={<MainSection element={<Dashboard />} />} />
         <Route path="/summary" element={<MainSection element={<Summary />} />} />

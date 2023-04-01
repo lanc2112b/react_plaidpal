@@ -31,7 +31,8 @@ const HeaderNav = () => {
   };
   
 
-  console.log(user);
+  /**console.log(user);*/
+
   return (<Navbar expand="lg">
       <Container>
         <Navbar.Brand href="#home"><img src="PlaidPal.png" alt="plaid pal logo"/></Navbar.Brand>
@@ -55,10 +56,8 @@ const HeaderNav = () => {
           </Nav.Item>
           
           }
-          
-        
 
-          {user.email !== null ? <Link to="/signup" className="nav-link"  >
+          {!user.email ? <Link to="/signup" className="nav-link"  >
             <i className="fas fa-user me-2"></i>
             Register
           </Link> : ""}

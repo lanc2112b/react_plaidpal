@@ -19,10 +19,11 @@ const FlashSiteErrors = () => {
       variant={message.variant}
       onClose={alertHandler}
       show={message.msgType === "error" ? message.showMsg : false}
+      fade
     >
       <Alert.Heading>{message.title}</Alert.Heading>
       <p>{message.msg}</p>
-    </Alert>
+      </Alert>
   );
 };
 
