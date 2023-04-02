@@ -85,7 +85,10 @@ const HeaderNav = () => {
              
              }
 
-
+          <Link to="/react2chart" className="nav-link" >
+            <i className="fas fa-house me-2"></i>
+            R2C Examples
+          </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
