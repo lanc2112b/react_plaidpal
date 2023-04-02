@@ -57,7 +57,7 @@ const ProfileCard = () => {
                     <div className="card-footer border-0 bg-white shadow-sm d-flex flex-row justify-content-end">
                         <Button variant="danger" onClick={handleShow}>
                             <i className="fa-solid fa-user-slash me-2"></i>
-                            Delete Account
+                            Delete User
                         </Button>
                     </div>
                 </div>
