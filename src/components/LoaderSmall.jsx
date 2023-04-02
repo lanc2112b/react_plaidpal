@@ -1,4 +1,5 @@
 import { Spinner } from "react-bootstrap";
+
 const LoaderSmall = ({ content }) => {
   return (
     <section className="w-100 d-flex flex-row align-items-center justify-content-center">

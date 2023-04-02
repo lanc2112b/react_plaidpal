@@ -84,7 +84,7 @@ export const createLinkToken = (data) => { // data object,
 // app.post("/api/exchange_public_token", tokenExchange); // user <-> plaid setup
 export const tokenExchange = (data) => { // data object, 
   return ppApi
-    .post('/exchange_public_token', { data })
+    .post('/exchange_public_token',  data)
     .then((results) => {
       //console.log(results)
       return results.data; // returned token object 
@@ -93,8 +93,9 @@ export const tokenExchange = (data) => { // data object,
 }
 
 export const authUser = (data) => { // data object, 
+  console.log(data);
   return ppApi
-    .post('/auth', {data})
+    .post('/auth', data)
     .then((results) => {
       console.log(results)
       return results.data; // returned token object 
@@ -105,13 +106,14 @@ export const authUser = (data) => { // data object,
 
 // app.post("/api/plaid/transactions", getTransactions); /// for summary / dashboard page  
 //[daterange, income, expediture, asc/ desc, page, limit] or whatever the actual ones are... 
-export const getTransactions = (data, filters) => { // data object, 
+export const getTransactions = (data, filters = null) => { // data googleId, 
   return ppApi
     .post('/plaid/transactions',
       //{params: {   // change out the params for those needed
          // limit: limit,
-          //selectType: 'income',  
+          //selectType: 'income',
         //}}
+      {googleId: data}
         )
     .then((results) => {
       //console.log(results)
@@ -126,7 +128,7 @@ export const getTransactions = (data, filters) => { // data object,
 // can this deliver many notes identified by account and transaction ( thinking the accounts list could have a popover or badge with a note count. )? Example below.
 export const getTransactionNotes = (data) => { // data object, 
   return ppApi
-    .post('/exchange_public_token')
+    .post('/api/notes/:transaction_id')
     .then((results) => {
       //console.log(results)
       return results.data; // returned token object 

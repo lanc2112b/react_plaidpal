@@ -98,3 +98,7 @@ height: 50px !important;
   border-radius: 0.3rem;
   
 }
+
+.table-col-first {
+  width: 1rem;
+}
