@@ -86,9 +86,14 @@ const HeaderNav = () => {
              }
 
           <Link to="/react2chart" className="nav-link" >
-            <i className="fas fa-house me-2"></i>
+            <i className="fa-solid fa-chart-area me-2"></i>
             R2C Examples
           </Link>
+          <Link to="/googlechart" className="nav-link" >
+            <i className="fa-solid fa-chart-gantt me-2"></i>
+            RGC Examples
+          </Link>
+          
           </Nav>
         </Navbar.Collapse>
       </Container>
