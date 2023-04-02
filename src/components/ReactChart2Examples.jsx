@@ -28,13 +28,21 @@ ChartJS.register(
     Legend);
 
 const ReactCharts2Examples = () => { 
-
+/**
+ * 
+ * #5899DA
+ * #E8743B
+ * #19A979
+ * #ED4A7B
+ * #945ECF
+ */
+    
     const colourArr = [
-        "hsla(87, 12%, 51%, 1)",
-        "hsla(224, 19%, 27%, 1)",
-        "hsla(116, 24%, 70%, 1)",
-        "hsla(118, 24%, 58%, 1)",
-        "hsla(256, 9%, 32%, 1)",
+        "hsla(210, 64%, 60%, 1)",
+        "hsla(20, 79%, 57%, 1)",
+        "hsla(160, 74%, 38%, 1)",
+        "hsla(342, 82%, 61%, 1)",
+        "hsla(269, 54%, 59%, 1)",
     ];
 
     const labels = ['Gym',
@@ -69,10 +77,10 @@ const ReactCharts2Examples = () => {
     return (<>
 
         <section className="rc2-examples">
+            <p><Link to="https://react-chartjs-2.js.org/examples"> Example usage here</Link></p>
+            <div className="row mt-5 justify-content-evenly"> {/** Using Container > Row > Column may be better to colapse cards on mobile a little easier and allows 4 col / 8col layouts on larger screens etc */}
 
-            <div className="d-flex flex-row flex-wrap"> {/** Using Container > Row > Column may be better to colapse cards on mobile a little easier and allows 4 col / 8col layouts on larger screens etc */}
-
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-primary d-flex justify-content-center align-items-center"><i className="fa-solid fa-chart-pie"></i></div>
                     <Card.Body>
                         <Card.Title>Doughnut</Card.Title>
@@ -84,7 +92,7 @@ const ReactCharts2Examples = () => {
                     
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-success d-flex justify-content-center align-items-center"><i className="fa-solid fa-chart-pie"></i></div>
                     <Card.Body>
                         <Card.Title>Pie</Card.Title>
@@ -95,7 +103,7 @@ const ReactCharts2Examples = () => {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-warning  d-flex justify-content-center align-items-center"><i className="fa-solid fa-chart-simple"></i></div>
                     <Card.Body>
                         <Card.Title>Bar</Card.Title>
@@ -106,7 +114,8 @@ const ReactCharts2Examples = () => {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-danger d-flex justify-content-center align-items-center"><i className="fa-solid fa-chart-line"></i></div>
                     <Card.Body>
                         <Card.Title>Line</Card.Title>
@@ -117,7 +126,7 @@ const ReactCharts2Examples = () => {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                    
                     <div className="chart-card-icon bg-info d-flex justify-content-center align-items-center"><i className="fa-solid fa-compass"></i></div>
                     <Card.Body>
@@ -129,7 +138,7 @@ const ReactCharts2Examples = () => {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-light d-flex justify-content-center align-items-center"><i className="fa-brands fa-uncharted text-dark"></i></div>
                     <Card.Body>
                         <Card.Title>Radar</Card.Title>
@@ -140,7 +149,7 @@ const ReactCharts2Examples = () => {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-dark d-flex justify-content-center align-items-center"><i className="fa-solid fa-chart-simple"></i></div>
                     <Card.Body>
                         <Card.Title>Bubble</Card.Title>
@@ -151,7 +160,7 @@ const ReactCharts2Examples = () => {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '18rem' }} className="shadow-sm border-0 me-2 mb-5">
+                <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
                     <div className="chart-card-icon bg-white d-flex justify-content-center align-items-center"><i className="fa-solid fa-chart-simple text-warning"></i></div>
                     <Card.Body>
                         <Card.Title>Scatter</Card.Title>
@@ -161,7 +170,7 @@ const ReactCharts2Examples = () => {
 
                     </Card.Body>
                 </Card>
-                <p><Link to="https://react-chartjs-2.js.org/examples"> Example usage here</Link></p>
+                
             </div>
 
         </section>
