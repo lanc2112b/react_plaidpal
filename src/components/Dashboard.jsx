@@ -58,9 +58,12 @@ const Dashboard = () => {
     return publicToken ? (
         <PlaidAuth publicToken={publicToken} />
     ) : (
+        <>
+        <p>Functionality being ported over to the user profile page</p>
         <button onClick={() => open()} disabled={!ready}>
             Connect a bank account
         </button>
+        </>    
     );
 };
 

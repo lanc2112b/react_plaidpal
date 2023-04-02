@@ -44,8 +44,8 @@ const ProfileCard = () => {
             <Col xs={12} lg={6} className="profile-card">
                 <div className="card border-0 shadow-sm rounded border-top border-light">
                     <div className="card-header bg-white border-0">
-                        <div className="card-photo shadow-sm">
-                            <img src={user.picture} alt="" className="shadow-sm" />
+                        <div className="card-photo">
+                            <img src={user.picture} alt="" className="" />
                         </div>
                         <dl className="mt-5 ps-3">
                             <dt>Name</dt>
