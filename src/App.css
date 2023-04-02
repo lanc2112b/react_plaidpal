@@ -118,16 +118,5 @@ height: 50px !important;
   margin-left: 1.5rem;
   margin-top: -1rem;
   font-size: 2.2rem;
-  color: aliceblue;
+  color: hsl(208, 100%, 97%);
 }
-
-/* .chart-card-icon::after { 
-inset:inherit;
- 
-} */
-
-/* .chart-card-icon i{ 
-
-  background: linear-gradient(90deg, hsl(210, 64%, 60%) 0%, hsl(20, 79%, 57%) 35%, hsl(160, 74%, 38%) 100%, hsl(342, 82%, 61%) 100%,hsl(269, 54%, 59%) 100%);
-
-} */
