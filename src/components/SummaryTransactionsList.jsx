@@ -27,12 +27,20 @@ const SummaryTransactionsList = () => {
 
     if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
 
+    const clickHandler = (clickValue) => {
+        console.log(clickValue);
+        /** do click handler stuff here 
+         * open a single transaction page
+         * or a modal
+        */
+    
+    }
+
     return (
         <>
-            <Table responsive striped bordered hover size="sm">
+            <Table responsive striped hover className="shadow-sm" size="sm">
                 <thead>
                     <tr>
-                        <th className="table-col-first">ID</th>
                         <th>Date</th>
                         <th>Merchant</th>
                         <th className="d-none d-md-table-cell">Category</th>
@@ -41,7 +49,7 @@ const SummaryTransactionsList = () => {
                 </thead>
                 <tbody className="small">
                     {list.map((element) => {
-                        return (<tr><SummaryTransactionCard key={element.transaction_id} transaction={element} /></tr>)
+                        return (<tr onClick={() => { clickHandler(element.transaction_id) }} key={element.transaction_id}><SummaryTransactionCard transaction={element} /></tr>)
                     })}
                 </tbody>
             </Table>

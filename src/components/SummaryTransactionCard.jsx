@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+//import { Button } from "react-bootstrap";
 import { DateTime } from 'luxon';
 
 const SummaryTransactionCard = ({ transaction }) => {
@@ -8,11 +8,6 @@ const SummaryTransactionCard = ({ transaction }) => {
 
     return (
         <>
-            <td>
-                <Button size="sm" variant="primary" value={transaction.transaction_id}>
-                    <i className="fa-solid fa-circle-info"></i>
-                </Button>
-            </td>
             <td className="align-middle">
                 {DateTime.fromISO(transaction.date).toLocaleString(
                     DateTime.DATE
@@ -20,7 +15,7 @@ const SummaryTransactionCard = ({ transaction }) => {
             </td>
             <td className="align-middle">{transaction.name}</td>
             <td className="align-middle d-none d-md-table-cell">{transaction.category[0]}</td>
-            <td className="align-middle">{useSymbol}{transaction.amount.toFixed(2)}</td> { /** Currently outgoings are positive, income are negative values */}
+            <td className="align-middle">{useSymbol}{transaction.amount.toFixed(2)}</td>
         </>
     )
 
