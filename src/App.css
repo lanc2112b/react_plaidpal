@@ -102,3 +102,27 @@ height: 50px !important;
 .table-col-first {
   width: 1rem;
 }
+
+.chart-card-icon {
+  position:relative;
+  width: 5rem;
+  height: 4rem;
+  border-radius: 3px;
+  box-shadow: 
+    inset hsla(0, 0%, 94%, 20%) 0.5rem 0.5rem 0.7rem,
+    hsla(0, 0%, 29%, 50%) 0.3rem 0.3rem 0.4rem;
+    
+  margin-left: 1.5rem;
+  margin-top: -1rem;
+  font-size: 2.2rem;
+  color: aliceblue;
+}
+
+.chart-card-icon::after { 
+inset:inherit;
+ 
+}
+
+/* .chart-card-icon i{ 
+ 
+} */
