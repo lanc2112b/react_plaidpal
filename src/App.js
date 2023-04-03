@@ -1,8 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route} from 'react-router-dom';
-import { useContext } from 'react';
-import { UserContext } from './contexts/User'
+//import { useContext } from 'react';
+//import { UserContext } from './contexts/User'
 import MainSection from './components/MainSection';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -19,15 +19,15 @@ import Profile from './components/Profile';
 
 function App() {
 
-  const { user } = useContext(UserContext);
+  //const { user } = useContext(UserContext);
  // console.log(user);
   return (
     <>
       <Header />
         <Routes>
         <Route path="/" element={<MainSection element={<Landing />} />} />
-        <Route path="/signup" element={<MainSection element={!user.email ? <RegisterPage /> : <Landing/>} />} />
-        <Route path="/login" element={<MainSection element={!user.email ? <Login/> : <Landing/>} />} />
+        <Route path="/signup" element={<MainSection element={<RegisterPage />} />} />
+        <Route path="/login" element={<MainSection element={<Login/>} />} />
         <Route path="/dashboard" element={<MainSection element={<Dashboard />} />} />
         <Route path="/profile" element={<MainSection element={<Profile />} />} />
         <Route path="/summary" element={<MainSection element={<Summary />} />} />
