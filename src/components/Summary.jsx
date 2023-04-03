@@ -17,18 +17,19 @@ const Summary = () => {
             .then((results) => {
                 setList(results);
             }).catch((error) => {
-
+// console.log(error, 'logerr')
         });
         setLoading(false);
 
     }, [user.googleId]);
 
     if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
+    console.log(list, 'summary 27')
     return (
         <>
            
             {/** component for visualisation here */}
-            <Donut list={list}/>
+            <Donut list={list} />
 
 
             {/** component for transaction list here */}

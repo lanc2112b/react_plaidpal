@@ -1,8 +1,8 @@
 import {Card} from "react-bootstrap";
 import {Doughnut} from "react-chartjs-2";
-import {useEffect} from "react";
 
 export default function Donut({list}) {
+    console.log(list, 'list1')
     const allLabels = labelMap(list);
     const labels = [...new Set(allLabels)];
 
@@ -14,15 +14,19 @@ export default function Donut({list}) {
         return allLabels;
     }
 
-    const colourArr = [
-        "hsla(210, 64%, 60%, 1)",
-        "hsla(20, 79%, 57%, 1)",
-        "hsla(160, 74%, 38%, 1)",
-        "hsla(342, 82%, 61%, 1)",
-        "hsla(269, 54%, 59%, 1)",
-        "hsl(52,100%,49%)",
-    ];
+    // const colourArr = [
+    //     "hsla(210, 64%, 60%, 1)",
+    //     "hsla(20, 79%, 57%, 1)",
+    //     "hsla(160, 74%, 38%, 1)",
+    //     "hsla(342, 82%, 61%, 1)",
+    //     "hsla(269, 54%, 59%, 1)",
+    //     "hsla(52, 100%, 49%, 1 )",
+    // ];
 
+
+
+
+console.log(allLabels, 'list')
     const count = allLabels.reduce((acc, item) => {
         if (acc[item]) {
             acc[item] += 1;
@@ -35,16 +39,37 @@ export default function Donut({list}) {
         acc.push({ item: key, count: value });
         return acc;
     }, []);
-    console.log(result);
 
-    const dataSet = [
-        result[0].count,
-        result[1].count,
-        result[2].count,
-        result[3].count,
-        result[4].count,
-        result[5].count,
-    ]
+
+    const dataSet = [    result[0]?.count || 0,
+        result[1]?.count || 0,
+        result[2]?.count || 0,
+        result[3]?.count || 0,
+        result[4]?.count || 0,
+        result[5]?.count || 0,
+    ];
+    function prepColors(data) {
+
+        const colourArr = [
+            "hsla(210, 64%, 60%, 1)",
+            "hsla(20, 79%, 57%, 1)",
+            "hsla(160, 74%, 38%, 1)",
+            "hsla(342, 82%, 61%, 1)",
+            "hsla(269, 54%, 59%, 1)",
+            "hsla(52, 100%, 49%, 1 )",
+            "hsla(217,100%,58%)",
+            "hsla(23,74%,43%,0.65)",
+            "hsla(10,100%,50%)",
+            "hsla(134,65%,51%)",
+        ];
+
+        const count = result.length;
+
+        const slicedArray = colourArr.slice(0, count);
+
+        return slicedArray;
+
+    }
 
     const data = {
         labels: labels,
@@ -52,8 +77,8 @@ export default function Donut({list}) {
             {
                 label: "Percentage",
                 data: dataSet,
-                backgroundColor: colourArr,
-                borderColor: colourArr,
+                backgroundColor: prepColors(),
+                borderColor: prepColors(),
                 borderWidth: 1,
                 width: 120,
                 height: 120,
