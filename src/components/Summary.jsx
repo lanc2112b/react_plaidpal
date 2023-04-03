@@ -17,13 +17,13 @@ const Summary = () => {
             .then((results) => {
                 setList(results);
             }).catch((error) => {
-// console.log(error, 'logerr')
         });
         setLoading(false);
 
     }, [user.googleId]);
 
-    if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
+    if (loading) return <LoaderSmall content={"Loading transactions..."} />;
+    
     console.log(list, 'summary 27')
     return (
         <>
@@ -33,7 +33,7 @@ const Summary = () => {
 
 
             {/** component for transaction list here */}
-            <SummaryTransactionsList list={list} loading={loading} />
+            <SummaryTransactionsList list={list} />
         </>
     )
 }

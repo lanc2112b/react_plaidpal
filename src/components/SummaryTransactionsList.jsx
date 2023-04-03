@@ -1,12 +1,7 @@
 import { Table } from 'react-bootstrap';
 import SummaryTransactionCard from './SummaryTransactionCard';
-import LoaderSmall from './LoaderSmall';
 
-const SummaryTransactionsList = ({list,loading}) => {
-
-
-
-    if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
+const SummaryTransactionsList = ({list}) => {
 
     const clickHandler = (clickValue) => {
         console.log(clickValue);
@@ -31,7 +26,7 @@ const SummaryTransactionsList = ({list,loading}) => {
                 </thead>
                 <tbody >
                     {list.map((element) => {
-                        return (<tr onClick={() => { clickHandler(element.transaction_id) }} key={element.transaction_id}><SummaryTransactionCard transaction={element} loading={loading} /></tr>)
+                        return (<tr onClick={() => { clickHandler(element.transaction_id) }} key={element.transaction_id}><SummaryTransactionCard transaction={element}/></tr>)
                     })}
                 </tbody>
             </Table>

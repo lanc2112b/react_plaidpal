@@ -7,7 +7,8 @@ const SummaryTransactionCard = ({transaction,loading}) => {
     const currencySymbol = {GBP: '£', USD: '$', EUR: '€'}; /// etc...
     const useSymbol = currencySymbol[transaction.iso_currency_code]
 
-    if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
+    if (loading) return (<LoaderSmall content={"Loading transactions..."} />);
+    
     return (
         <>
             <td className="align-middle">
