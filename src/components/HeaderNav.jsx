@@ -28,7 +28,7 @@ const HeaderNav = () => {
         token: null,
       },
     });
-    window.location.reload();
+    window.location.replace('/login');
   };
 
 
