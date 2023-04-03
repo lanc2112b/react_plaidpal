@@ -121,11 +121,19 @@ height: 50px !important;
   color: hsl(208, 100%, 97%);
 }
 
+.page-error,
+.server-error {
+  
+  background-size: cover;
+  min-height: 65vh;
+}
+
+.page-error {
+  background: url('/public/pexels-bakr-magrabi-3203659.jpg') no-repeat center center;
+}
 
 .server-error {
-  background: url('/public/pexels-bakr-magrabi-3203659.jpg') no-repeat center center;
-  background-size: cover;
-  min-height: 60vh;
+  background: url('/public/pexels-manuel-geissinger-9101887.jpg') no-repeat center center;
 }
 
 .error-page-message {
