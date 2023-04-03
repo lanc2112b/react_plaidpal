@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Col } from "react-bootstrap";
 import ProfileAccountCard from "./ProfileAccountCard";
 import LoaderSmall from './LoaderSmall';
-import { getAccounts, createLinkToken, tokenExchange, authUser } from "../api/api";
+import { getAccounts, createLinkToken, tokenExchange} from "../api/api";
 import { usePlaidLink } from 'react-plaid-link';
 
 const ProfileAccounts = ({ googleId }) => {
@@ -12,8 +12,6 @@ const ProfileAccounts = ({ googleId }) => {
 
     const [linkToken, setLinkToken] = useState(null);
     const [publicToken, setPublicToken] = useState(null);
-    const [addAccount, setAddAccount] = useState(false);
-    const [account, setAccount] = useState();
 
     const { open, ready } = usePlaidLink({
         token: linkToken,
@@ -48,12 +46,12 @@ const ProfileAccounts = ({ googleId }) => {
             tokenExchange(obj)
                 .then((results) => {
                     console.log('accessToken: ', results);
-                    return authUser()
-                }).then((results) => {
-                    console.log(results);
-                })
+                    window.location.replace('/profile')
+                }).catch((error) => {
+                    console.log(error);
+                });
         }
-    },[publicToken])
+    }, [publicToken, googleId])
 
     console.log('Pub Token after exchange: ', publicToken);
     /** triggered reload */

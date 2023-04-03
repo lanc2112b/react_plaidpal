@@ -1,19 +1,11 @@
 import { useContext } from 'react';
 import { UserContext } from '../contexts/User';
-import { Navigate } from 'react-router-dom';
 import ProfileCard from "./ProfileCard";
 import ProfileAccounts from "./ProfileAccounts"
 import { Row } from "react-bootstrap";
 
 const Profile = () => {
     const { user } = useContext(UserContext); 
-
-    if (!user.email || !user.firstName) {
-
-        return (<Navigate to="/" replace={true} />)
-
-    }
-
 
     return (
         <section className="profile container">
