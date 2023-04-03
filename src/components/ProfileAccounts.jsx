@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Col } from "react-bootstrap";
 import ProfileAccountCard from "./ProfileAccountCard";
 import LoaderSmall from './LoaderSmall';
-import { getAccounts, createLinkToken, tokenExchange} from "../api/api";
+import { getAccounts, createLinkToken, tokenExchange, deleteAccountById } from "../api/api";
 import { usePlaidLink } from 'react-plaid-link';
 
 const ProfileAccounts = ({ googleId }) => {
@@ -17,13 +17,28 @@ const ProfileAccounts = ({ googleId }) => {
         token: linkToken,
         onSuccess: (public_token, metadata) => {
             setPublicToken(public_token);
-
-            console.log('success ', public_token, metadata);
-            // send public_token to server
         },
-    })
+    });
 
+    const accountDeleteHandler = (value) => {
 
+        //console.log(value);
+        deleteAccountById(googleId, value)
+            .then((result) => {
+                //console.log(accountList);
+                
+                    const filtered = accountList.filter((element) => {
+                        return element.account_id !== value;
+                    });  
+                    
+                  //console.log(filtered)  
+                  setAccountList(filtered);    
+                
+            }).catch((error) => {
+                console.log(error);
+            });
+
+    }
     /** triggered on reload  */
     useEffect(() => {
         createLinkToken()
@@ -35,7 +50,7 @@ const ProfileAccounts = ({ googleId }) => {
 
     /** public token success*/
     useEffect(() => {
-        console.log('pt in useEff', publicToken)
+        //console.log('pt in useEff', publicToken)
         if (publicToken) {
 
             const obj = {
@@ -53,13 +68,15 @@ const ProfileAccounts = ({ googleId }) => {
         }
     }, [publicToken, googleId])
 
-    console.log('Pub Token after exchange: ', publicToken);
+    //console.log('Pub Token after exchange: ', publicToken);
+    
     /** triggered reload */
     useEffect(() => {
         setLoading(true);
         getAccounts(googleId)
             .then((results) => {
                 setAccountList(results);
+                //setDeletedAccount(false);
             });
         setLoading(false);
 
@@ -73,7 +90,9 @@ const ProfileAccounts = ({ googleId }) => {
 
             {ready ? 
             <Button variant="success" className="mb-2 ms-2" onClick={open}>
-                <i className="fa-solid fa-circle-plus me-2"></i>
+                    <i className=" const filtered = accountList.filter((element) => {
+                        return element.account_id !== value;
+                   }) fa-solid fa-circle-plus me-2"></i>
                 Add Account {/** Trigger the Plaid popup here. Maybe extract the functionality to use anywhere */}
                 </Button>
             : ''}
@@ -81,7 +100,7 @@ const ProfileAccounts = ({ googleId }) => {
             {/** Loop through accounts accounnts.map */}
             
             {accountList.map((element) => {
-                return <ProfileAccountCard key={element.account_id} account={element} />
+                return <ProfileAccountCard key={element.account_id} account={element} accountDeleteHandler={accountDeleteHandler} />
             })}
         </Col>
     )
