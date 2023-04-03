@@ -12,18 +12,29 @@ const Login = () => {
 
         <section className="Login">
             <Container className="mt-sm-3 mt-lg-5 ">
-                <Row>
+                <Row className="pb-4">
                     <Col></Col>
-                    <Col xs={12} md={10} lg={8} className="p-5 shadow-sm d-flex flex-column justify-content-center align-items-center text-center  bg-white">
+                    <Col xs={12} md={10} lg={8} className="p-4 pt-2 shadow-sm d-flex flex-column align-items-center bg-white">
+                        <Row className="mb-3">
+                            <Col></Col>
+                            <Col xs={12} md={10} lg={10} className="pt-2">
+                                <h2 className="mb-3 mt-2 text-center">Login</h2>
+                                <hr />
 
-                        <h3 className="display-6">Login</h3>
-                        <p>Welcome Back</p>
-                        <p className="mb-5">
-                            Please login below to access your accounts.
-                            
-                        </p>
+                                <p className="text-center">Welcome Back</p>
+                                <p className="text-center mb-5">
+                                    Please login below to view your accounts.
+
+                                </p>
+                                <div className="d-flex justify-content-center pb-4">
+                                    <LoginButton />
+                                </div>
+
+                            </Col>
+                            <Col></Col>
+                        </Row>
                         <FlashMessage />
-                        <LoginButton />
+
                     </Col>
                     <Col></Col>
                 </Row>
