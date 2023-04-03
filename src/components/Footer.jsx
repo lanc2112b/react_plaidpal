@@ -13,10 +13,28 @@ const Footer = () => {
                             <span className="fa-li">
                                 <i className="fa-brands fa-github me-2"></i>
                             </span>
-                            <span className="ms-3">
 
-                            GitHub
+                            <Nav.Link href="https://github.com/IzaanD98/plaidPal-BE" target="_blank" className="ms-3">
+                                GitHub Backend
+                            </Nav.Link>
+                        </li>
+                        <li className="mb-1">
+                            <span className="fa-li">
+                                <i className="fa-brands fa-github me-2"></i>
                             </span>
+
+                            <Nav.Link href="https://github.com/lanc2112b/react_plaidpal" target="_blank" className="ms-3">
+                                GitHub Frontend
+                            </Nav.Link>
+                        </li>
+                        <li className="mb-1">
+                            <span className="fa-li">
+                                <i className="fa-solid fa-building-columns me-2"></i>
+                            </span>
+
+                            <Nav.Link href="https://plaid.com/docs/sandbox/" target="_blank" className="ms-3">
+                                Plaid Api
+                            </Nav.Link>
                         </li>
                         <li className="mb-1">
                             <span className="fa-li">
@@ -24,25 +42,7 @@ const Footer = () => {
                             </span>
                             <span className="ms-3">
 
-                            LinkedIn
-                            </span>
-                        </li>
-                        <li className="mb-1">
-                            <span className="fa-li">
-                                <i className="fa-brands fa-discord me-2"></i>
-                            </span>
-                            <span className="ms-3">
-
-                            Discord
-                            </span>
-                        </li>
-                        <li className="mb-1">
-                            <span className="fa-li">
-                                <i className="fa-brands fa-twitter me-2"></i>
-                            </span>
-                            <span className="ms-3">
-
-                            Twitter
+                                LinkedIn
                             </span>
                         </li>
                     </ul>
@@ -59,7 +59,7 @@ const Footer = () => {
 
                                     Privacy Policy
                                 </span>
-                                
+
                             </Link>
 
                         </Nav.Item>
@@ -103,7 +103,7 @@ const Footer = () => {
                     </Nav>
                 </div>
             </div>
-    </footer>)
+        </footer>)
 
 }
 
