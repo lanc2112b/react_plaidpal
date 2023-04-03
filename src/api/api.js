@@ -135,6 +135,16 @@ export const getTransactionNotes = (data) => { // data object,
     });
 }
 
+export const deleteAccountById = (googleId, account_id) => {
+  return ppApi
+    .delete(`/accounts/${account_id}`, { data: {'googleId': googleId} } )
+    .then((results) => {
+      //console.log(results)
+      // return the status code here
+      return results.status;
+    });
+
+}
 /**
  * {notes: [{account_id: 'xyz',
  *           transaction_id: 'xyz,
