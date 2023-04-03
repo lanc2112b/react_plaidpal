@@ -22,16 +22,16 @@ const ProfileAccounts = ({ googleId }) => {
 
     const accountDeleteHandler = (value) => {
 
-        console.log(value);
+        //console.log(value);
         deleteAccountById(googleId, value)
             .then((result) => {
-                console.log(accountList);
+                //console.log(accountList);
                 
                     const filtered = accountList.filter((element) => {
                         return element.account_id !== value;
                     });  
                     
-                  console.log(filtered)  
+                  //console.log(filtered)  
                   setAccountList(filtered);    
                 
             }).catch((error) => {
@@ -50,7 +50,7 @@ const ProfileAccounts = ({ googleId }) => {
 
     /** public token success*/
     useEffect(() => {
-        console.log('pt in useEff', publicToken)
+        //console.log('pt in useEff', publicToken)
         if (publicToken) {
 
             const obj = {
@@ -68,7 +68,7 @@ const ProfileAccounts = ({ googleId }) => {
         }
     }, [publicToken, googleId])
 
-    console.log('Pub Token after exchange: ', publicToken);
+    //console.log('Pub Token after exchange: ', publicToken);
     
     /** triggered reload */
     useEffect(() => {
