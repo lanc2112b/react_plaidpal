@@ -1,29 +1,10 @@
-import { useState, useEffect, useContext } from 'react';
-import { UserContext } from '../contexts/User';
-import { getTransactions } from '../api/api';
 import { Table } from 'react-bootstrap';
 import SummaryTransactionCard from './SummaryTransactionCard';
 import LoaderSmall from './LoaderSmall';
 
-const SummaryTransactionsList = () => {
-
-    const { user } = useContext(UserContext); 
-
-    const [list, setList] = useState([]);
-    const [loading, setLoading] = useState(true);
+const SummaryTransactionsList = ({list,loading}) => {
 
 
-    useEffect(() => {
-        setLoading(true);
-        getTransactions(user.googleId)
-            .then((results) => {
-                setList(results);
-            }).catch((error) => {
-
-            });
-        setLoading(false);
-
-    }, [user.googleId]);
 
     if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
 
