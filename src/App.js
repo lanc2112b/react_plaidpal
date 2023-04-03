@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Landing from './components/Landing';
-import Dashboard from './components/Dashboard';
+//import Dashboard from './components/Dashboard'; // delete on reaching mvp.
 import RegisterPage from './components/RegisterPage';
 import Summary from './components/Summary';
 import ReactCharts2Examples from './components/ReactChart2Examples';
@@ -28,7 +28,7 @@ function App() {
         <Route path="/" element={<MainSection element={<Landing />} />} />
         <Route path="/signup" element={<MainSection element={<RegisterPage />} />} />
         <Route path="/login" element={<MainSection element={<Login/>} />} />
-        <Route path="/dashboard" element={<MainSection element={<Dashboard />} />} />
+        {/**<Route path="/dashboard" element={<MainSection element={<Dashboard />} />} />*/}
         <Route path="/profile" element={<MainSection element={<Profile />} />} />
         <Route path="/summary" element={<MainSection element={<Summary />} />} />
         <Route path="/react2chart" element={<MainSection element={<ReactCharts2Examples />} />} />
