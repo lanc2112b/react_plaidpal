@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Landing from './components/Landing';
+import Error404 from './components/Error404';
 //import Dashboard from './components/Dashboard'; // delete on reaching mvp.
 import RegisterPage from './components/RegisterPage';
 import Summary from './components/Summary';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/summary" element={<MainSection element={<Summary />} />} />
         <Route path="/react2chart" element={<MainSection element={<ReactCharts2Examples />} />} />
         <Route path="/googlechart" element={<MainSection element={<ReactGoogleChartsExample />} />} />
+        <Route path="*" element={<MainSection element={<Error404 />} />} />
         </Routes>
       <Footer />
     </>
