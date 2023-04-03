@@ -1,13 +1,11 @@
 //import { Button } from "react-bootstrap";
 import {DateTime} from 'luxon';
-import LoaderSmall from "./LoaderSmall";
 
-const SummaryTransactionCard = ({transaction,loading}) => {
+const SummaryTransactionCard = ({transaction}) => {
 
     const currencySymbol = {GBP: '£', USD: '$', EUR: '€'}; /// etc...
     const useSymbol = currencySymbol[transaction.iso_currency_code]
 
-    if(loading) return (<LoaderSmall content={"Loading transactions..."} />);
     return (
         <>
             <td className="align-middle">
