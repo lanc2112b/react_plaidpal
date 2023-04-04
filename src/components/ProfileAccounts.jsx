@@ -84,10 +84,6 @@ const ProfileAccounts = ({ googleId }) => {
 
     }, [googleId]);
 
-    if (loading) return (
-        <Col xs={12} lg={6} className="profile-accounts rounded pt-0 pt-2 mt-4 mt-lg-0 border-top border-light shadow-sm">
-            <LoaderSmall content={"Loading Accounts..."} />
-        </Col>);
     //console.log(accountList)
     return (
 
@@ -101,12 +97,20 @@ const ProfileAccounts = ({ googleId }) => {
                 : <Button variant="success" className="mb-2 ms-2" onClick={open} disabled>
                     <i className="fa-solid fa-circle-plus me-2"></i>
                     Add Account
-                </Button>}
+                </Button>
+            }
             
-          
-            {accountList.map((element) => {
-                return <ProfileAccountCard key={element.account_id} account={element} accountDeleteHandler={accountDeleteHandler} />
-            })}
+            {(loading) ? 
+
+                    <LoaderSmall content={"Loading Accounts..."} />
+
+                    :
+                accountList.map((element) => {
+                    return <ProfileAccountCard key={element.account_id} account={element} accountDeleteHandler={accountDeleteHandler} />
+                })
+            }
+            
+
         </Col>
     )
 }
