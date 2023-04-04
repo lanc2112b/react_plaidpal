@@ -27,9 +27,9 @@ const SummaryFilter = ({ setList }) => {
   };
   return (
     <>
-      {loading && (
+      {/* {loading && (
         <h2 style={{ textAlign: "center" }}>Loading transactions...</h2>
-      )}
+      )} */}
       <Container className="mb-1 px-0">
         <Row className="gx-0 w-100">
           <Col xs={1}>
