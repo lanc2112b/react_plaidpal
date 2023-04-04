@@ -171,3 +171,12 @@ export const getTransactionById = (data, transId) => { // data object,
       return results.data; // returned token object 
     });
 }
+
+export const addPostById = (googleId, transactionId, note) => {
+  const data = {googleId, note};
+  return ppApi
+  .post(`/notes/${transactionId}`,data)
+  .then((results) => {
+    return results.status;
+  });
+}
