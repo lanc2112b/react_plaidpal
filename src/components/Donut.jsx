@@ -76,7 +76,7 @@ export default function Donut({list}) {
 
     return (
         <>
-            <Card className="card mb-4 rounded-3 shadow-sm">
+            <Card className="card mb-4 rounded-3 shadow-sm h-100">
                 <Card.Body>
                     <Card.Title>Spending by categories</Card.Title>
                     {/** options={...}*/}
