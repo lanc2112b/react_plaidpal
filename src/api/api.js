@@ -177,6 +177,6 @@ export const addPostById = (googleId, transactionId, note) => {
   return ppApi
   .post(`/notes/${transactionId}`,data)
   .then((results) => {
-    return results.status;
+    return results;
   });
 }
