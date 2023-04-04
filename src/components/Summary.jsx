@@ -4,6 +4,7 @@ import {UserContext} from "../contexts/User";
 import {getTransactions} from "../api/api";
 import LoaderSmall from "./LoaderSmall";
 import Donut from "./Donut";
+import SummaryFilter from "./SummaryFilter";
 
 
 const Summary = () => {
@@ -31,7 +32,7 @@ const Summary = () => {
             {/** component for visualisation here */}
             <Donut list={list} />
 
-
+            <SummaryFilter />
             {/** component for transaction list here */}
             <SummaryTransactionsList list={list} />
         </>
