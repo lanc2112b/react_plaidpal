@@ -36,8 +36,9 @@ header {
   
 } */
 .nav-profile-link img{
-  width: 1.5rem;
-  height: auto;
+  
+  width: 1.3rem;
+  height: 1.3rem;
   border-radius: 50%;
 }
 
