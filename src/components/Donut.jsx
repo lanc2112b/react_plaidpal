@@ -2,7 +2,7 @@ import {Card} from "react-bootstrap";
 import {Doughnut} from "react-chartjs-2";
 
 export default function Donut({list}) {
-    console.log(list, 'list1')
+
     const allLabels = labelMap(list);
     const labels = [...new Set(allLabels)];
 
@@ -14,19 +14,6 @@ export default function Donut({list}) {
         return allLabels;
     }
 
-    // const colourArr = [
-    //     "hsla(210, 64%, 60%, 1)",
-    //     "hsla(20, 79%, 57%, 1)",
-    //     "hsla(160, 74%, 38%, 1)",
-    //     "hsla(342, 82%, 61%, 1)",
-    //     "hsla(269, 54%, 59%, 1)",
-    //     "hsla(52, 100%, 49%, 1 )",
-    // ];
-
-
-
-
-console.log(allLabels, 'list')
     const count = allLabels.reduce((acc, item) => {
         if (acc[item]) {
             acc[item] += 1;
@@ -36,18 +23,19 @@ console.log(allLabels, 'list')
         return acc;
     }, {});
     const result = Object.entries(count).reduce((acc, [key, value]) => {
-        acc.push({ item: key, count: value });
+        acc.push({item: key, count: value});
         return acc;
     }, []);
 
 
-    const dataSet = [    result[0]?.count || 0,
+    const dataSet = [result[0]?.count || 0,
         result[1]?.count || 0,
         result[2]?.count || 0,
         result[3]?.count || 0,
         result[4]?.count || 0,
         result[5]?.count || 0,
     ];
+
     function prepColors(data) {
 
         const colourArr = [
@@ -88,18 +76,13 @@ console.log(allLabels, 'list')
 
     return (
         <>
-            {/*{list.map((element) => {*/}
-            {/*    console.log(list)*/}
-            {/*})}*/}
-            <Card className="shadow-sm border-0 me-2 mb-5 col col-12 col-md-5 col-lg-3">
+            <Card className="card mb-4 rounded-3 shadow-sm h-100">
                 <Card.Body>
                     <Card.Title>Spending by categories</Card.Title>
                     {/** options={...}*/}
                     {/*{...props}*/}
                     <Doughnut data={data}/>
-
                 </Card.Body>
-
             </Card>
         </>
     )
