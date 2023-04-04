@@ -1,7 +1,8 @@
 import {Container, Row, Col, Button} from "react-bootstrap";
 import {getTransactions} from "../api/api";
 import {useContext, useEffect, useState} from "react";
-import {UserContext} from "../contexts/User";
+import { UserContext } from "../contexts/User";
+import LoaderSmall from './LoaderSmall';
 
 const SummaryFilter = ({setList}) => {
     const {user} = useContext(UserContext);
@@ -28,10 +29,14 @@ const SummaryFilter = ({setList}) => {
     return (
         <>
             {loading && (
-                <h2 style={{textAlign: "center"}}>Loading transactions...</h2>
+                <LoaderSmall content={'Loading transactions...'} />
+                
             )}
-            <Container className="mb-1 px-0">
+            
+            <Container className="mb-1 px-0 mt-5">
+                
                 <Row className="gx-0 w-100">
+
                     <Col xs={1}>
                         <Button variant="danger" onClick={() => sort("date")}>
                             <i className="fa-solid fa-calendar-days"></i>

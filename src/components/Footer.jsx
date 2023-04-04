@@ -15,7 +15,9 @@ const Footer = () => {
                             </span>
 
                             <Nav.Link href="https://github.com/IzaanD98/plaidPal-BE" target="_blank" className="ms-3">
-                                GitHub Backend
+                                <span className="small">
+                                    GitHub Backend
+                                </span>
                             </Nav.Link>
                         </li>
                         <li className="mb-1">
@@ -24,7 +26,9 @@ const Footer = () => {
                             </span>
 
                             <Nav.Link href="https://github.com/lanc2112b/react_plaidpal" target="_blank" className="ms-3">
-                                GitHub Frontend
+                                <span className="small">
+                                    GitHub Frontend
+                                </span>
                             </Nav.Link>
                         </li>
                         <li className="mb-1">
@@ -33,21 +37,23 @@ const Footer = () => {
                             </span>
 
                             <Nav.Link href="https://plaid.com/docs/sandbox/" target="_blank" className="ms-3">
-                                Plaid Api
+                                <span className="small">
+                                    Plaid Api
+                                </span>
                             </Nav.Link>
                         </li>
                         <li className="mb-1">
                             <span className="fa-li">
                                 <i className="fa-brands fa-linkedin me-2"></i>
                             </span>
-                            <span className="ms-3">
+                            <span className="ms-3 small">
 
                                 LinkedIn
                             </span>
                         </li>
                     </ul>
                 </div>
-                <div className="h-100 d-flex flex-row flex-wrap align-content-end justify-content-end align-items-stretch">&copy; PlaidPal 2023</div>
+                <div className="h-100 d-flex flex-row flex-wrap align-content-end justify-content-end align-items-stretch small">&copy; PlaidPal 2023</div>
                 <div>
                     <Nav className="flex-column">
                         <Nav.Item>
@@ -55,7 +61,7 @@ const Footer = () => {
                                 <span className="fa-li">
                                     <i className="fa-brands fa-twitter me-2"></i>
                                 </span>
-                                <span className="ms-3">
+                                <span className="ms-3 small">
 
                                     Privacy Policy
                                 </span>
@@ -68,7 +74,7 @@ const Footer = () => {
                                 <span className="fa-li">
                                     <i className="fa-brands fa-twitter me-2"></i>
                                 </span>
-                                <span className="ms-3">
+                                <span className="ms-3 small">
 
                                     T & Cs
                                 </span>
@@ -80,7 +86,7 @@ const Footer = () => {
                                 <span className="fa-li">
                                     <i className="fa-brands fa-twitter me-2"></i>
                                 </span>
-                                <span className="ms-3">
+                                <span className="ms-3 small">
 
                                     About Us
                                 </span>
@@ -92,7 +98,7 @@ const Footer = () => {
                                 <span className="fa-li">
                                     <i className="fa-brands fa-twitter me-2"></i>
                                 </span>
-                                <span className="ms-3">
+                                <span className="ms-3 small">
 
                                     Contact Us
                                 </span>

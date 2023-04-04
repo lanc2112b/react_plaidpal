@@ -81,6 +81,7 @@ export default function Barchart({ list }) {
       },
     },
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         stacked: true,
@@ -96,7 +97,7 @@ export default function Barchart({ list }) {
   };
   return (
     <>
-      <Card className="card mb-4 rounded-3 shadow-sm h-100">
+      <Card className="rounded-3 shadow-sm flex-fill">
         <Card.Body>
           <Card.Title>Total Monthly Spend</Card.Title>
           <Card.Text>
