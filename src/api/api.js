@@ -126,7 +126,8 @@ export const deleteAccountById = (googleId, account_id) => {
       // return the status code here
       return results.status;
     });
-};
+}
+
 /**
  * {notes: [{account_id: 'xyz',
  *           transaction_id: 'xyz,
@@ -140,3 +141,21 @@ export const deleteAccountById = (googleId, account_id) => {
  *          ]}
  *  }
  */
+
+export const getTransactionById = (data, transId) => { // data object, 
+  return ppApi
+    .post(`/transactions/${transId}`, data)
+    .then((results) => {
+      //console.log(results)
+      return results.data; // returned token object 
+    });
+}
+
+export const addPostById = (googleId, transactionId, note) => {
+  const data = {googleId, note};
+  return ppApi
+  .post(`/notes/${transactionId}`,data)
+  .then((results) => {
+    return results;
+  });
+}
