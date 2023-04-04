@@ -1,21 +1,56 @@
-import { Table } from 'react-bootstrap';
+import { useState, useContext, useEffect } from 'react';
+import { UserContext } from '../contexts/User';
+import { getTransactionById } from '../api/api';
+
+import { Table, Modal, Button, Form} from 'react-bootstrap';
 import SummaryTransactionCard from './SummaryTransactionCard';
+import LoaderSmall from './LoaderSmall'
 
-const SummaryTransactionsList = ({list}) => {
+const SummaryTransactionsList = ({ list }) => {
+    
+    const { user } = useContext(UserContext);
 
-    const clickHandler = (clickValue) => {
-        console.log(clickValue);
-        /** do click handler stuff here
-         * open a single transaction page
-         * or a modal
-        */
+    const [summaryModalShow, setSummaryModalShow] = useState(false);
+    const [transactionKey, setTransactionKey] = useState('');
+    const [transaction, setTransaction] = useState(null);
 
+    const handleClose = () => {
+        setSummaryModalShow(false);
+        setTransaction(null);
     }
 
+
+    useEffect(() => {
+
+        getTransactionById({ googleId: user.googleId }, transactionKey)
+            .then((results) => {
+
+                console.log(results);
+                setTransaction(results);
+            })
+            .catch((error) => {
+                console.log(error);
+                /* if (error.response.status === 500) {
+                    window.location.replace('/500');
+                } */
+
+            });
+
+    }, [user.googleId, transactionKey])
+
+    const clickHandler = (clickValue) => {
+
+        setTransactionKey(clickValue);
+        setSummaryModalShow(true);
+        
+    }
+
+    
+    
     return (
         <>
             <div className='card'>
-            <Table responsive striped hover className="shadow-sm" size="sm">
+             <Table responsive striped hover className="shadow-sm" size="sm">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -29,7 +64,49 @@ const SummaryTransactionsList = ({list}) => {
                         return (<tr onClick={() => { clickHandler(element.transaction_id) }} key={element.transaction_id}><SummaryTransactionCard transaction={element}/></tr>)
                     })}
                 </tbody>
-            </Table>
+                </Table>
+
+                 <Modal show={summaryModalShow} onHide={handleClose} animation={false} size='lg' className="text-white">
+                    <Modal.Header className="bg-dark text-light border-0">
+                        Transaction Details
+                    </Modal.Header>
+                    <Modal.Body className="bg-dark text-light">
+                        {!transaction ? <LoaderSmall content={'Loading transaction... '} />
+                            :
+                            <>
+                                <dl>
+                                    <dt>Date: </dt>
+                                    <dl>some date</dl>
+                                    <dt>Merchant: </dt>
+                                    <dl></dl>
+                                    <dt>Amount: </dt>
+                                    <dl></dl>
+                                    <dt>Status: </dt>
+                                    <dl></dl>
+
+                                </dl>
+                            
+                                <Form>
+                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Transaction Note: {transaction.transaction[0].transaction_id}</Form.Label>
+                                        <Form.Control as="textarea" size="sm" value={transaction.note?.note ?? null} placeholder="note or existing" className="bg-light bg-gradient">
+                                    </Form.Control>
+                                </Form.Group>
+
+                                <Button variant="success" type="submit" size="sm" onClick={() => { }}>
+                                    Save
+                                </Button>
+                                </Form>
+                            </>
+                        }
+                    </Modal.Body>
+                    <Modal.Footer className="bg-dark text-light border-0">
+                        <Button variant="secondary" size="sm" onClick={handleClose}>
+                            Close
+                        </Button>
+                        
+                    </Modal.Footer >
+                </Modal>
             </div>
         </>
     )

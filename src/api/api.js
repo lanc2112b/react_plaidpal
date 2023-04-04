@@ -145,6 +145,9 @@ export const deleteAccountById = (googleId, account_id) => {
     });
 
 }
+
+
+
 /**
  * {notes: [{account_id: 'xyz',
  *           transaction_id: 'xyz,
@@ -158,3 +161,13 @@ export const deleteAccountById = (googleId, account_id) => {
  *          ]}
  *  }
  */
+
+
+export const getTransactionById = (data, transId) => { // data object, 
+  return ppApi
+    .post(`/transactions/${transId}`, data)
+    .then((results) => {
+      //console.log(results)
+      return results.data; // returned token object 
+    });
+}
