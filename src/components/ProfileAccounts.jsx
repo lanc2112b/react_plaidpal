@@ -9,6 +9,7 @@ const ProfileAccounts = ({ googleId }) => {
     /** Accounts list here */
     const [accountList, setAccountList] = useState([]);
     const [loading, setLoading] = useState(false);
+    //const [buttonReady, setButtonReady] = useState(false);
 
     const [linkToken, setLinkToken] = useState(null);
     const [publicToken, setPublicToken] = useState(null);
@@ -77,12 +78,16 @@ const ProfileAccounts = ({ googleId }) => {
             .then((results) => {
                 setAccountList(results);
                 //setDeletedAccount(false);
+                setLoading(false);
             });
-        setLoading(false);
+        
 
     }, [googleId]);
 
-    if(loading) return (<LoaderSmall content={"Loading Accounts..."} />);
+    if (loading) return (
+        <Col xs={12} lg={6} className="profile-accounts rounded pt-0 pt-2 mt-4 mt-lg-0 border-top border-light shadow-sm">
+            <LoaderSmall content={"Loading Accounts..."} />
+        </Col>);
     //console.log(accountList)
     return (
 
@@ -90,15 +95,15 @@ const ProfileAccounts = ({ googleId }) => {
 
             {ready ? 
             <Button variant="success" className="mb-2 ms-2" onClick={open}>
-                    <i className=" const filtered = accountList.filter((element) => {
-                        return element.account_id !== value;
-                   }) fa-solid fa-circle-plus me-2"></i>
-                Add Account {/** Trigger the Plaid popup here. Maybe extract the functionality to use anywhere */}
+                    <i className="fa-solid fa-circle-plus me-2"></i>
+                Add Account 
                 </Button>
-            : ''}
+                : <Button variant="success" className="mb-2 ms-2" onClick={open} disabled>
+                    <i className="fa-solid fa-circle-plus me-2"></i>
+                    Add Account
+                </Button>}
             
-            {/** Loop through accounts accounnts.map */}
-            
+          
             {accountList.map((element) => {
                 return <ProfileAccountCard key={element.account_id} account={element} accountDeleteHandler={accountDeleteHandler} />
             })}

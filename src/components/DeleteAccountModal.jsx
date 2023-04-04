@@ -9,10 +9,8 @@ const DeleteAccountModal = ({ show, handleClose, deleteAccount }) => {
                 <Modal.Title className="text-danger "><i className="fa-solid fa-hand me-2"></i>Stop!</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                Are you sure you want to delete your account, this action is irreversable!
-                Your linked accounts will be deleted, but first copied and sold on the dark web.
-                Your accounts probably emptied to support criminal gangs in Australia!
-                Is that what you really want?
+                Are you sure you want to delete your account? <br />
+                This action is irreversible, and will unlink all of your accounts from our application.
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
