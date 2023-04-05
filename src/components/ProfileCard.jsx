@@ -32,7 +32,7 @@ const ProfileCard = () => {
                         },
                     });
                     
-                    window.location.reload();
+                    window.location.replace('/signup');
                 }
                 //console.log(result);
             })
