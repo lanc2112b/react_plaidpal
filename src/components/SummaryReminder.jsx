@@ -4,7 +4,7 @@ export default function SummaryReminder() {
 
     return (
         <>
-            <Card className="card flex-fill rounded-3 shadow-sm">
+            <Card className="card flex-fill rounded-3 shadow-sm mb-3">
                 <div className="d-flex flex-row">
                 <div className="chart-card-icon bg-success d-flex justify-content-center align-items-center"><i className="fa-solid fa-calendar-days"></i></div>
                     <Card.Header className="border-0 bg-white ms-5">Latest Reminder</Card.Header>
