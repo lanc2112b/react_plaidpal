@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
                 <div className="h-100 d-flex flex-row flex-wrap align-content-end justify-content-end align-items-stretch small">&copy; PlaidPal 2023</div>
                 <div>
-                    <Nav className="flex-column">
+                    <Nav className="flex-column align-items-start">
                         <Nav.Item>
                             <Link to="#" className="nav-link text-white">
                                 <span className="fa-li">
