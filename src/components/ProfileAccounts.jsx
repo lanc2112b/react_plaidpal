@@ -79,6 +79,12 @@ const ProfileAccounts = ({ googleId }) => {
                 setAccountList(results);
                 //setDeletedAccount(false);
                 setLoading(false);
+            }).catch((error) => {
+                //console.log(error);
+                if (error.response.status === 500) {
+                  setLoading(false);  
+                }
+                
             });
         
 
