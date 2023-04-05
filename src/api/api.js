@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const ppApi = axios.create({
-  baseURL: "https://be-plaidpal.onrender.com/api/",
+  baseURL: "https://pp.nidhoggr.co.uk/api/",
 });
 
 //const tempToken = '108971830262728991643'
