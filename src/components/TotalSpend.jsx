@@ -32,7 +32,7 @@ export default function TotalSpend() {
                                         Month Total:
                                     </dt>
                                     <dd className="small">
-                                        <em><span className="text-danger font-weight-bold">-£1097</span></em>
+                                        <em><span className="text-danger font-weight-bold">-£10097</span></em>
                                     </dd>
                                 </dl>
                             </Col>

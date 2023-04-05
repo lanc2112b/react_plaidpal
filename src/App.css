@@ -59,7 +59,15 @@ footer li{
   min-height: 100%;
 }
 
+
+.landing-image-container {
+  background-size: cover;
+  min-height: 65vh;
+  background: url('/public/pexels-bakr-magrabi-3203659.jpg') no-repeat center center;
+}
+
 .landing-image{
+  
   width:100%;
   height: auto;
 }
