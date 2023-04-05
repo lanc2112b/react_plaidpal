@@ -14,7 +14,7 @@ const Landing = () => {
         </div> 
         <div className=" d-flex flex-row justify-content-center ">
             
-            <Button className="text-white w-25 my-3" variant="primary" onClick={() => console.log("Danger")}>
+            <Button className="text-white my-3 fw-bold" variant="primary" onClick={() => window.location.replace('/signup')}>
                 Get Started
                 <i className="fa-solid fa-circle-arrow-right ms-3"></i>
             </Button>

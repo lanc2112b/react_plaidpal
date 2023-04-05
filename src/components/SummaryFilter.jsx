@@ -32,14 +32,6 @@ const SummaryFilter = ({setList}) => {
                 <LoaderSmall content={'Loading transactions...'} />
                 
             )}
-            <div class="position-fixed sticky-top text-nowrap rounded-3 p-1 m-3 bg-info opacity-50">
-                <div class="d-block d-sm-none">Extra Small (xs)</div>
-                <div class="d-none d-sm-block d-md-none">Small (sm)</div>
-                <div class="d-none d-md-block d-lg-none">Medium (md)</div>
-                <div class="d-none d-lg-block d-xl-none">Large (lg)</div>
-                <div class="d-none d-xl-block d-xxl-none">X-Large (xl)</div>
-                <div class="d-none d-xxl-block">XX-Large (xxl)</div>
-            </div>
             <Container className="mb-1 px-0 mt-5">
                 
                 <Row className="gx-1 w-100">
