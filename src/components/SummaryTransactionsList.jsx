@@ -114,7 +114,7 @@ const SummaryTransactionsList = ({ list }) => {
                                     <dd>{transaction.transaction[0].account_id} </dd>
 
                                     <dt>Amount:</dt>
-                                    <dd>£{transaction.transaction[0].amount}</dd>
+                                    <dd>£{transaction.transaction[0].amount.toFixed(2)}</dd>
 
                                     <dt>Transaction Type:</dt>
                                     <dd>{transaction.transaction[0].transaction_type} </dd>

@@ -35,27 +35,27 @@ const SummaryFilter = ({setList}) => {
             
             <Container className="mb-1 px-0 mt-5">
                 
-                <Row className="gx-0 w-100">
+                <Row className="gx-1 w-100">
 
-                    <Col xs={1}>
-                        <Button variant="danger" onClick={() => sort("date")}>
+                    <Col xs={3} sm={2} md={2}>
+                        <Button size="sm" variant="danger" onClick={() => sort("date")}>
                             <i className="fa-solid fa-calendar-days"></i>
                         </Button>
                     </Col>
-                    <Col xs={5} className="offset-1">
-                        <Button variant="danger" onClick={() => sort("name")}>
+                    <Col xs={7} sm={6} md={6} className="ps-0">
+                        <Button size="sm" variant="danger" onClick={() => sort("name")}>
                             <i className="fa-solid fa-shop "></i>
                         </Button>
                     </Col>
 
-                    <Col xs={2} className="justify-content-center d-none d-md-flex ps-5">
-                        <Button variant="dark">
+                    <Col xs={0} sm={3} md={2} className="justify-content-start d-none d-md-flex ps-2">
+                        <Button size="sm" variant="dark">
                             <i className="fa-solid fa-layer-group"></i>
                         </Button>
                     </Col>
-                    <Col xs={2} className="justify-content-end d-flex pe-3">
-                        <Button variant="dark" onClick={() => sort("amount")}>
-                            <i className="fa-solid fa-sterling-sign"></i>
+                    <Col xs={2} sm={1} md={2} className="justify-content-start d-flex ps-lg-2">
+                        <Button size="sm" className="px-2  ms-lg-5" variant="dark" onClick={() => sort("amount")}>
+                            <i className="fa-solid fa-sterling-sign mx-1"></i>
                         </Button>
                     </Col>
                     {/* <Col xs={1} className=" justify-content-end d-flex">

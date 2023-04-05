@@ -16,11 +16,10 @@ const ProfileAccountCard = ({ account, accountDeleteHandler }) => {
                 </Card.ImgOverlay>
                 <Card.Body className="d-flex flex-row align-items-center justify-content-between p-2 ">
                     <Card.Text className="my-0 mx-3 small">{account.name}</Card.Text>
-                    <Card.Text className="my-0 ms-auto me-3 small">Bal: {useSymbol}{account.balances.current}</Card.Text>
+                    <Card.Text className="my-0 ms-auto me-3 small">Bal: {useSymbol}{account.balances.current.toFixed(2)}</Card.Text>
                                 
                     <Button variant="warning" onClick={() => { accountDeleteHandler(account.account_id) }}>
-                        <i className="fa-solid fa-trash-can me-2"></i>
-                        Account
+                        <i className="fa-solid fa-trash-can me-0 me-md-2"></i><span className="d-none d-md-inline">Account</span>
                     </Button>
                 </Card.Body>
             </Card>
