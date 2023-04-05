@@ -34,7 +34,9 @@ const HeaderNav = () => {
 
   /**console.log(user);*/
 
-  return (<Navbar expand="lg">
+  return (
+    <>
+    <Navbar expand="lg">
     <Container>
       <Link to="/" className="navbar-brand" ><img src="PlaidPal.png" alt="plaid pal logo" /></Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -94,7 +96,16 @@ const HeaderNav = () => {
         </Nav>
       </Navbar.Collapse>
     </Container>
-  </Navbar>)
+      </Navbar>
+      <div class="position-fixed sticky-top text-nowrap rounded-3 small p-1 m-3 mt-5 bg-info opacity-25">
+        <div class="d-block d-sm-none">Extra Small (xs)</div>
+        <div class="d-none d-sm-block d-md-none">Small (sm)</div>
+        <div class="d-none d-md-block d-lg-none">Medium (md)</div>
+        <div class="d-none d-lg-block d-xl-none">Large (lg)</div>
+        <div class="d-none d-xl-block d-xxl-none">X-Large (xl)</div>
+        <div class="d-none d-xxl-block">XX-Large (xxl)</div>
+      </div>
+    </>)
 }
 
 export default HeaderNav;
