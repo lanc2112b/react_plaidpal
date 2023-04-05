@@ -32,17 +32,24 @@ const SummaryFilter = ({setList}) => {
                 <LoaderSmall content={'Loading transactions...'} />
                 
             )}
-            
+            <div class="position-fixed sticky-top text-nowrap rounded-3 p-1 m-3 bg-info opacity-50">
+                <div class="d-block d-sm-none">Extra Small (xs)</div>
+                <div class="d-none d-sm-block d-md-none">Small (sm)</div>
+                <div class="d-none d-md-block d-lg-none">Medium (md)</div>
+                <div class="d-none d-lg-block d-xl-none">Large (lg)</div>
+                <div class="d-none d-xl-block d-xxl-none">X-Large (xl)</div>
+                <div class="d-none d-xxl-block">XX-Large (xxl)</div>
+            </div>
             <Container className="mb-1 px-0 mt-5">
                 
                 <Row className="gx-1 w-100">
 
-                    <Col xs={3} sm={2} md={2}>
+                    <Col xs={2} sm={2} md={2} >
                         <Button size="sm" variant="danger" onClick={() => sort("date")}>
                             <i className="fa-solid fa-calendar-days"></i>
                         </Button>
                     </Col>
-                    <Col xs={7} sm={6} md={6} className="ps-0">
+                    <Col xs={8} sm={8} md={6} className="ps-4 ps-sm-3 ps-md-0">
                         <Button size="sm" variant="danger" onClick={() => sort("name")}>
                             <i className="fa-solid fa-shop "></i>
                         </Button>
@@ -53,8 +60,8 @@ const SummaryFilter = ({setList}) => {
                             <i className="fa-solid fa-layer-group"></i>
                         </Button>
                     </Col>
-                    <Col xs={2} sm={1} md={2} className="justify-content-start d-flex ps-lg-2">
-                        <Button size="sm" className="px-2  ms-lg-5" variant="dark" onClick={() => sort("amount")}>
+                    <Col xs={2} sm={1} md={2} className="justify-content-start d-flex ps-sm-2 ps-md-4 ps-lg-3 ps-xl-4 ps-xxl-4">
+                        <Button size="sm" className="px-2 ms-md-2 ms-lg-4" variant="dark" onClick={() => sort("amount")}>
                             <i className="fa-solid fa-sterling-sign mx-1"></i>
                         </Button>
                     </Col>
@@ -69,6 +76,8 @@ const SummaryFilter = ({setList}) => {
           </Col> */}
                 </Row>
             </Container>
+
+            
         </>
     );
 };

@@ -14,7 +14,7 @@ export default function SummaryReminder() {
                     </Card.Title>
                     <Card.Text>
                         <h5>14/01/2022</h5>
-                        <p>£500 @ KFC????? I really need to reevaluate my life, omfg £500!</p>
+                        <p>£500 @ KFC????? Where's this transaction from, ring the bank first thing!</p>
                     </Card.Text>
                    
                 </Card.Body>
