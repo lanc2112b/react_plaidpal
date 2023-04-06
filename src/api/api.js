@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const ppApi = axios.create({
+  /* baseURL: "http://localhost:3000/api/", */
   baseURL: "https://pp.nidhoggr.co.uk/api/",
 });
 
