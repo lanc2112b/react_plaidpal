@@ -7,7 +7,7 @@ import { Spinner } from "react-bootstrap";
 const LoginButton = () => {
 
   const { handleGoogle, loading} = useFetch(
-    `https://plaidpal-api.onrender.com/api/login`
+    `https://pp.nidhoggr.co.uk/api/`  //FIXME: Needs to be added to .env.local!
   );
 
   useEffect(() => {
