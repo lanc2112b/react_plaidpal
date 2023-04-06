@@ -12,10 +12,10 @@ export default function SummaryReminder() {
                 <Card.Body>
                     <Card.Title>
                     </Card.Title>
-                    <Card.Text>
-                        <h5>14/01/2022</h5>
-                        <p>£500 @ KFC????? Where's this transaction from, ring the bank first thing!</p>
-                    </Card.Text>
+                    <Card.Header className="border-0 bg-white h5 ps-0">14/01/2022</Card.Header>
+                        
+                       <Card.Text className="ps-2">£500 @ KFC????? Where's this transaction from, ring the bank first thing!</Card.Text>
+                    
                    
                 </Card.Body>
               

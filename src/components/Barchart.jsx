@@ -30,16 +30,16 @@ export default function Barchart({ list }) {
     // Add up transaction amounts for each category and month
     list.forEach((transaction) => {
       const category = transaction.category[0];
-      console.log(category);
+      //console.log(category);
       const month = transaction.date.substring(5, 7);
-      console.log(month, "month");
+      //console.log(month, "month");
       const amount = transaction.amount;
-      console.log(amount, "amount");
+      //console.log(amount, "amount");
       if (!spendingByCategory[category][month]) {
         spendingByCategory[category][month] = 0;
       }
       spendingByCategory[category][month] += amount;
-      console.log(spendingByCategory, "big log");
+      //console.log(spendingByCategory, "big log");
     });
     // Convert spendingByCategory object to array of datasets
     return categories.map((category) => {

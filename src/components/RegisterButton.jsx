@@ -5,7 +5,7 @@ import { Spinner } from "react-bootstrap";
 const RegisterButton = () => {
 
         const { handleGoogle, loading} = useFetch(   // error   : optional param if needed
-            `https://pp.nidhoggr.co.uk/api/`  //FIXME: Needs to be added to .env.local!
+            `${process.env.REACT_APP_API_URL}/signup` 
         );
 
         useEffect(() => {

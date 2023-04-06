@@ -2,7 +2,7 @@ import axios from "axios";
 
 const ppApi = axios.create({
   /* baseURL: "http://localhost:3000/api/", */
-  baseURL: "https://pp.nidhoggr.co.uk/api/",
+  baseURL: `${process.env.REACT_APP_API_URL }/`,
 });
 
 //const tempToken = '108971830262728991643'

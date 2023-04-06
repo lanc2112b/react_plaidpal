@@ -7,7 +7,7 @@ import { Spinner } from "react-bootstrap";
 const LoginButton = () => {
 
   const { handleGoogle, loading} = useFetch(
-    `https://pp.nidhoggr.co.uk/api/`  //FIXME: Needs to be added to .env.local!
+    `${ process.env.REACT_APP_API_URL }/login`  //FIXME: Needs to be added to .env.local!
   );
 
   useEffect(() => {
