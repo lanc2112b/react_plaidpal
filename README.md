@@ -16,7 +16,7 @@ Tony Lancaster (me).
 The backend of the project can be found here:  [IzaanD98/plaidPal-BE](https://github.com/IzaanD98/plaidPal-BE)   
 Or here: [/lanc2112b/be_plaidpal_on](https://github.com/lanc2112b/be_plaidpal_on)  
   
-    
+* *NOTE: This was a student project, done with a level of satire around the title & logo.*  
 ___  
 
 ## Learn More About React
