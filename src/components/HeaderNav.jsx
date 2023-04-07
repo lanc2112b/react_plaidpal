@@ -38,7 +38,7 @@ const HeaderNav = () => {
     <>
     <Navbar expand="lg">
     <Container>
-      <Link to="/" className="navbar-brand" ><img src="PlaidPal.png" alt="plaid pal logo" /></Link>
+          <Link to="/" className="navbar-brand" ><img src="/PlaidPal.png" alt="plaid pal logo" /></Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
