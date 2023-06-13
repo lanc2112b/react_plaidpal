@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { MessageContext } from "../contexts/Message";
 import { Button, Col } from "react-bootstrap";
 import ProfileAccountCard from "./ProfileAccountCard";
 import LoaderSmall from './LoaderSmall';
@@ -6,6 +7,8 @@ import { getAccounts, createLinkToken, tokenExchange, deleteAccountById } from "
 import { usePlaidLink } from 'react-plaid-link';
 
 const ProfileAccounts = ({ googleId }) => {
+
+    const { setMessage } = useContext(MessageContext);
     /** Accounts list here */
     const [accountList, setAccountList] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -47,7 +50,20 @@ const ProfileAccounts = ({ googleId }) => {
                 setLinkToken(result.link_token);
                 //console.log('response: ', result);
             })
-    }, []);
+            .catch((error) => {
+                if (error.code === 'ERR_BAD_RESPONSE') {
+
+                    setMessage({
+                        msgType: 'error',
+                        showMsg: true,
+                        title: 'Plaid API error',
+                        msg: 'Error connecting to Plaid API, please try again later. If this message persists, please contact the administrator',
+                        dismiss: true,
+                    });
+                    //console.log("done gone wrong")
+                }
+            })
+    }, [setMessage]);
 
     /** public token success*/
     useEffect(() => {

@@ -1,6 +1,7 @@
 import SummaryTransactionsList from "./SummaryTransactionsList";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
+import { MessageContext } from "../contexts/Message";
 import { getTransactions } from "../api/api";
 import { Container, Row, Col } from "react-bootstrap";
 import LoaderLarge from "./LoaderSmall";
@@ -12,8 +13,11 @@ import SummaryReminder from "./SummaryReminder";
 
 const Summary = () => {
     const { user } = useContext(UserContext);
+    const { setMessage } = useContext(MessageContext);
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [apiError, setApiError] = useState(false);
+
 
     useEffect(() => {
         setLoading(true);
@@ -23,12 +27,26 @@ const Summary = () => {
                 setLoading(false);
             })
             .catch((error) => {
+                if (error.code === 'ERR_BAD_RESPONSE') {
+
+                    setMessage({
+                        msgType: 'error',
+                        showMsg: true,
+                        title: 'Plaid API error',
+                        msg: 'Error connecting to Plaid API, please try again later. If this message persists, please contact the administrator',
+                        dismiss: true,
+                    });
+                    //console.log("done gone wrong")
+                }
+                setLoading(false);
+                setApiError(true);
             });
 
-    }, [user.googleId]);
+    }, [user.googleId, setMessage]);
 
     if (loading) return <LoaderLarge content={"Loading transactions..."} />;
-    //console.log(list, "summary 27");
+    if(apiError) return <></>;
+
     return (
         <>
             <Container className="p-0">
